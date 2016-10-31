@@ -18,7 +18,7 @@
           <tbody>
             <?php
               $produtos = listaProdutos($conexao);
-              foreach($produtos as $produto) :
+              foreach($produtos as $produto) {
             ?>
               <tr>
                 <td><?=$produto[0];?></td>
@@ -26,7 +26,7 @@
                 <td><?=$produto[2];?></td>
               </tr>
             <?php
-              endforeach
+              };
             ?>
           </tbody>
         </table>
