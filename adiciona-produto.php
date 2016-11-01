@@ -5,6 +5,7 @@
 
   $produto = $_GET['produto'];
   $preco = $_GET['preco'];
+  $descricao = $_GET['descricao'];
 
   if(insereProduto($conexao, $produto, $preco)) {
 ?>
