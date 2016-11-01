@@ -10,8 +10,8 @@ include('conecta.php');
     return $produtos;
   };
 
-  function insereProduto($conexao, $produto, $preco) {
-    $query = "INSERT INTO produtos (nome_produto, preco_produto) VALUES ('{$produto}', '{$preco}')";
+  function insereProduto($conexao, $produto, $preco, $descricao) {
+    $query = "INSERT INTO produtos (nome_produto, preco_produto, descricao_produto) VALUES ('{$produto}', '{$preco}', '{$descricao}')";
     return mysqli_query($conexao, $query);
   };
 

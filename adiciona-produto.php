@@ -3,11 +3,11 @@
   include('conecta.php');
   include('banco-produto.php');
 
-  $produto = $_GET['produto'];
-  $preco = $_GET['preco'];
-  $descricao = $_GET['descricao'];
+  $produto = $_POST['produto'];
+  $preco = $_POST['preco'];
+  $descricao = $_POST['descricao'];
 
-  if(insereProduto($conexao, $produto, $preco)) {
+  if(insereProduto($conexao, $produto, $preco, $descricao)) {
 ?>
     <p class="text-success"> O Produto <?=$produto?> foi adicionado.</p>
     <?php } else {
