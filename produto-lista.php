@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <fieldset>
-      <legend>Cadastro de Produtos</legend>
+      <legend>Lista de Produtos</legend>
         <table class="table table-striped table-hover ">
           <thead>
             <tr>
@@ -24,6 +24,8 @@
               <th>Produto</th>
               <th>Preço</th>
               <th>Descricao</th>
+              <th>Categoria</th>
+              <th>Estado</th>
               <th>Excluir/Editar</th>
             </tr>
           </thead>
@@ -39,6 +41,8 @@
                 <td><?=$produto[1];?></td>
                 <td><?=$produto[2];?></td>
                 <td><?=$produto[3];?></td>
+                <td><?=$produto[4];?></td>
+                <td><?=$produto[5];?></td>
                 <td>
                   <form class="" action="remove-produto.php" method="post">
                     <input type="text" name="id" value="<?=$produto[0]?>" hidden="true">
@@ -51,7 +55,7 @@
         <?php }; ?>
               <tr>
                 <td colspan="2"><b>Total de Produtos</td>
-                <td colspan="3"><?=$soma?></td>
+                <td colspan="4"><?=$soma?></td>
               </tr>
           </tbody>
         </table>
