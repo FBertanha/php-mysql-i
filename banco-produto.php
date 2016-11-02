@@ -20,3 +20,15 @@
     $query = "DELETE FROM produtos WHERE id_produto = '{$id}'";
     return mysqli_query($conexao, $query);
   };
+
+  function buscaProduto($conexao, $id) {
+    $resultado = mysqli_query($conexao, "SELECT p.id_produto, p.nome_produto, p.preco_produto, p.descricao_produto, c.id_categoria, IF(p.usado_produto = '1', 'checked', '') FROM produtos AS p JOIN categorias AS c ON c.id_categoria = p.id_categoria WHERE p.id_produto = '{$id}'");
+    $produto = mysqli_fetch_row($resultado);
+    return $produto;
+  };
+
+  function alteraProduto($conexao, $id, $produto, $preco, $descricao, $categoria, $usado) {
+    $query = "UPDATE produtos SET nome_produto = '{$produto}' , preco_produto = '{$preco}', descricao_produto = '{$descricao}', id_categoria = '{$categoria}', usado_produto = '{$usado}' WHERE id_produto = '{$id}'";
+    echo $query;
+    return mysqli_query($conexao, $query);
+  };

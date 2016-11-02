@@ -47,9 +47,8 @@
                   <form class="" action="remove-produto.php" method="post">
                     <input type="text" name="id" value="<?=$produto[0]?>" hidden="true">
                     <button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                    <button type="reset" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+                    <a href="produto-formulario-altera.php?id=<?=$produto[0]?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
                   </form>
-
                 </td>
               </tr>
         <?php }; ?>
