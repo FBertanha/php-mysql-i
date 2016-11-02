@@ -16,16 +16,15 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <fieldset>
-      <legend>Lista de Produtos</legend>
+        <legend>Lista de Produtos</legend>
         <table class="table table-striped table-hover ">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Produto</th>
-              <th>Preço</th>
               <th>Descricao</th>
               <th>Categoria</th>
               <th>Estado</th>
+              <th>Preço</th>
               <th>Excluir/Editar</th>
             </tr>
           </thead>
@@ -34,10 +33,9 @@
               $produtos = listaProdutos($conexao);
               $soma = 0;
               foreach($produtos as $produto) {
-                $soma += $produto[2];
+                $soma += $produto[5];
             ?>
               <tr>
-                <td><?=$produto[0];?></td>
                 <td><?=$produto[1];?></td>
                 <td><?=$produto[2];?></td>
                 <td><?=$produto[3];?></td>
@@ -51,13 +49,14 @@
                   </form>
                 </td>
               </tr>
-        <?php }; ?>
+            <?php }; ?>
               <tr>
-                <td colspan="2"><b>Total de Produtos</td>
-                <td colspan="4"><?=$soma?></td>
+                <td colspan="2"><strong>Total de Produtos R$</strong></td>
+                <td class="text-right" colspan="4"><?=$soma?></td>
               </tr>
           </tbody>
         </table>
+      </fieldset>
     </div>
   </div>
 
